@@ -1,0 +1,30 @@
+<div class="container d-flex flex-column justify-content-center align-items-center">
+    <h2>Reactive Forms</h2>
+
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="form-group my-3 border border-secondary w-50 p-4 rounded">
+        <div class="my-3">
+            <label for="firstname">First Name</label>
+            <input class="form-control" minlength="2" maxlength="25" class="form-control" type="text" formControlName="firstname">
+            <span class="fs-6 text-danger" *ngIf="firstName && firstName.invalid && firstName.touched">Invalid First Name - Should be more than 2 characters</span>
+        </div>
+        <div class="my-3">
+            <label for="lastname">Last Name</label>
+            <input class="form-control" minlength="2" maxlength="25" type="text" formControlName="lastname">
+            <span class="fs-6 text-danger" *ngIf="lastName && lastName.invalid && lastName.touched">Invalid Last Name - Should be more than 2 characters</span>
+        </div>
+        <div class="my-3">
+            <label for="email">Email</label>
+            <input class="form-control" type="text" formControlName="email">
+            <span class="fs-6 text-danger" *ngIf="email && email.invalid && email.touched">Please use a correct email</span>
+        </div>
+        <div class="my-3">
+            <label for="password">Password</label>
+            <input class="form-control" minlength="8" maxlength="25" type="password" formControlName="password">
+            <span class="fs-6 text-danger" *ngIf="password && password.invalid && password.touched">Password must be more than 8 characters</span>
+
+        </div>
+        <div class="my-3">
+            <button [disabled]="signupForm.invalid" type="submit" class="btn btn-dark"> Create Account</button>
+        </div>
+    </form>
+</div>
