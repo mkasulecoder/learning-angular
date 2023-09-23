@@ -1,0 +1,35 @@
+<div class="container my-5 h-100 border-0 rounded bg-red border-dark mx-auto text-dark p-2 d-flex flex-column justify-content-center align-items-center">
+    <div class="my-3">
+        <h2>Template Driven Form</h2>
+    </div>
+   <div>
+     <form #loginForm="ngForm" (ngSubmit)="submit(loginForm)" class="bg-light my-4 border border-light p-4 w-100 rounded gap-3">
+        <div class="form-group my-4">
+            <label for="name">Name</label>
+            <!-- pattern="[a-zA-Z+$]" allows strings only and no numbers -->
+            <input class="form-control" type="text" name="name" minlength="3" maxlength="25" #name="ngModel" pattern="[a-zA-Z]+$" ngModel required/>
+            <div *ngIf="name.touched && name.invalid">
+                <span class="alert text-danger fs-6">Name must be 3 - 15 characters</span>
+            </div>
+        </div>
+        <div class="form-group my-4">
+            <label for="email">Email</label>
+            <!-- email allows string in email form only -->
+            <input class="form-control" type="text" name="email" minlength="8" maxlength="25" #email="ngModel" email ngModel required/>
+            <div *ngIf="email.touched && email.invalid">
+                <span class="alert text-danger fs-6">Email must be 7 or more characters</span>
+            </div>
+        </div>
+        <div class="form-group my-4">
+            <label for="password">Password</label>
+            <input type="password" name="password" minlength="8" maxlength="25" class="form-control" #password="ngModel" ngModel required/>
+            <div *ngIf="password.touched && password.invalid">
+                <span class="alert text-danger fs-6">Password must be 8 - 15 characters</span>
+            </div>
+        </div>
+        <div>
+            <button [disabled]="loginForm.invalid" type="submit" class="form-control btn btn-dark">Register</button>
+        </div>
+    </form>
+   </div>
+</div>
