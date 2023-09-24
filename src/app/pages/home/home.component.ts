@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Subscription, tap } from 'rxjs';
+import { Subscription, filter, map, take, tap } from 'rxjs';
 import { FetchdataService } from 'src/app/services/fetchdata.service';
 
 @Component({
@@ -17,8 +17,15 @@ export class HomeComponent implements OnInit {
 
   // initialize data fetched
   ngOnInit(): void {
-    this.myData$ = this.dataService.getData().pipe(tap((data) => this.myData = data)).subscribe();
-    console.warn("Test", this.myData);
+    this.myData$ = this.dataService.getData().pipe(
+
+      tap((data) => {
+        this.myData = data;
+        console.log("Inspecting data", data)
+      }),
+
+    ).subscribe();
+
   }
 
   // Unsubscribe when component is destroyed

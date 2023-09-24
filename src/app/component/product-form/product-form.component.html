@@ -1,0 +1,52 @@
+<div class="d-flex flex-column justify-content-center align-items-center col-12 w-100">
+    
+    <h3 class="fw-bold h1 text-capitalize">dashboard</h3>
+    
+    <form [formGroup]="productsForm" class="form-group col-12 border border-secondary rounded my-4 w-100 p-4">
+    <div class="d-flex flex-row gap-3 my-3">
+        <div>
+            <label for="productName">Product Name</label>
+            <input type="text" class="form-control" formControlName="productName">
+        </div>
+        <div>
+            <label for="price">Price</label>
+            <input type="number" class="form-control" formControlName="price">
+        </div>
+    </div>
+
+    <div>
+        <label for="description">Description</label>
+        <textarea formControlName="description" cols="30" rows="5" class="col-12 my-2 form-control"></textarea>
+    </div>
+
+    <div class="d-flex flex-row gap-3 my-3">
+        <div>
+            <label for="size">Size</label>
+            <input type="number" class="form-control" formControlName="size">
+        </div>
+        <div>
+            <label for="gender">Gender</label>
+            <input type="text" class="form-control text-capitalize" formControlName="gender">
+        </div>
+    </div>
+
+    <div class="d-flex flex-row gap-3 my-3">
+        <div>
+            <label for="purchases">Purchases</label>
+            <input type="number" class="form-control" formControlName="purchases">
+        </div>
+        <div>
+            <label for="discount">Discount</label>
+            <input type="number" class="form-control" formControlName="discount">
+        </div>
+    </div>
+
+
+    <div class="d-flex flex-row justify-content-end align-items-center mt-3">
+        <button [disabled]="productsForm" type="submit" class="btn btn-success">Add New Product</button>
+        <!-- <button [disabled]="productsForm" type="submit"  class="btn btn-dark">Update</button> -->
+        <!-- <button [disabled]="productsForm" type="submit" class="btn btn-danger">Delete</button> -->
+    </div>
+
+</form>
+</div>
