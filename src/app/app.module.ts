@@ -9,6 +9,7 @@ import { SignupComponent } from './component/signup/signup.component';
 import { HomeComponent } from './pages/home/home.component';
 import { ProductFormComponent } from './component/product-form/product-form.component';
 import { EditProductComponent } from './component/edit-product/edit-product.component';
+import { DayOfWeekComponent } from './component/day-of-week/day-of-week.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { EditProductComponent } from './component/edit-product/edit-product.comp
     SignupComponent,
     HomeComponent,
     ProductFormComponent,
-    EditProductComponent
+    EditProductComponent,
+    DayOfWeekComponent
   ],
   imports: [
     BrowserModule,

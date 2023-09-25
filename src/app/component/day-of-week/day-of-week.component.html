@@ -1,0 +1,30 @@
+<div class="d-flex flex-row justify-content-center align-items-center gap-3">
+    <span class="fw-bold">Date</span>
+    <span class="fs-6 text-secondary fw-bold">{{time}}</span>
+
+    <div [ngSwitch]="day">
+        <span *ngSwitchCase="0" class="fs-6 text-secondary fw-bold">Sunday</span>
+        <span *ngSwitchCase="1" class="fs-6 text-secondary fw-bold">Monday</span>
+        <span *ngSwitchCase="2" class="fs-6 text-secondary fw-bold">Tuesday</span>
+        <span *ngSwitchCase="3" class="fs-6 text-secondary fw-bold">Wednesday</span>
+        <span *ngSwitchCase="4" class="fs-6 text-secondary fw-bold">Thursday</span>
+        <span *ngSwitchCase="5" class="fs-6 text-secondary fw-bold">Friday</span>
+        <span *ngSwitchCase="6" class="fs-6 text-secondary fw-bold">Saturday</span>
+    </div>
+
+    <div [ngSwitch]="day">
+        <span *ngSwitchCase="0" class="fs-6 text-secondary fw-bold">January</span>
+        <span *ngSwitchCase="1" class="fs-6 text-secondary fw-bold">February</span>
+        <span *ngSwitchCase="2" class="fs-6 text-secondary fw-bold">March</span>
+        <span *ngSwitchCase="3" class="fs-6 text-secondary fw-bold">April</span>
+        <span *ngSwitchCase="4" class="fs-6 text-secondary fw-bold">May</span>
+        <span *ngSwitchCase="5" class="fs-6 text-secondary fw-bold">June</span>
+        <span *ngSwitchCase="6" class="fs-6 text-secondary fw-bold">July</span>
+        <span *ngSwitchCase="7" class="fs-6 text-secondary fw-bold">August</span>
+        <span *ngSwitchCase="8" class="fs-6 text-secondary fw-bold">September</span>
+        <span *ngSwitchCase="9" class="fs-6 text-secondary fw-bold">October</span>
+        <span *ngSwitchCase="10" class="fs-6 text-secondary fw-bold">November</span>
+        <span *ngSwitchCase="11" class="fs-6 text-secondary fw-bold">December</span>
+    </div>
+
+</div>
