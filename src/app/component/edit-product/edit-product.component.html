@@ -1,8 +1,6 @@
 <div class="d-flex flex-column justify-content-center align-items-center col-12 w-100">
-    
-    <h3 class="fw-bold h1 text-capitalize">dashboard</h3>
-    
-    <form [formGroup]="productsForm" (ngSubmit)="onSubmit()" class="form-group col-12 border border-secondary rounded my-4 w-100 p-4">
+    <h3 class="fw-bold h1 text-capitalize">Edit Product Data</h3>
+    <form [formGroup]="editProductForm" (ngSubmit)="onSubmit()" class="form-group col-12 border border-secondary rounded my-4 w-100 p-4">
     <div class="d-flex flex-row gap-3 my-3">
         <div>
             <label for="productName">Product Name</label>
@@ -70,9 +68,9 @@
 
 
     <div class="d-flex flex-row justify-content-end align-items-center mt-3">
-        <button [disabled]="productsForm.invalid" type="submit" class="btn btn-success">Add New Product</button>
-        <!-- <button [disabled]="productsForm" type="submit"  class="btn btn-dark">Update</button> -->
-        <!-- <button [disabled]="productsForm" type="submit" class="btn btn-danger">Delete</button> -->
+        <button [disabled]="editProductForm.invalid" type="submit" class="btn btn-success">Add New Product</button>
+        <!-- <button [disabled]="editProductForm" type="submit"  class="btn btn-dark">Update</button> -->
+        <!-- <button [disabled]="editProductForm" type="submit" class="btn btn-danger">Delete</button> -->
     </div>
 
 </form>

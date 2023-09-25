@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Subscription, filter, map, take, tap } from 'rxjs';
 import { FetchdataService } from 'src/app/services/fetchdata.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -13,7 +14,7 @@ export class HomeComponent implements OnInit {
   myData: any;
   private subscription: Subscription | undefined;
 
-  constructor(private dataService: FetchdataService) { }
+  constructor(private dataService: FetchdataService, private router: Router) { }
 
   // initialize data fetched
   ngOnInit(): void {
@@ -33,6 +34,23 @@ export class HomeComponent implements OnInit {
     if (this.subscription) {
       this.subscription.unsubscribe();
     }
+  }
+  /**
+   * Delete product by ID from DB
+   * @param productId 
+   */
+  deleteProduct(productId: number) {
+    this.dataService.deleteProductByID(productId).subscribe(
+      (response: any) => {
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000);
+        console.log("Product successfully deleted");
+      },
+      (error) => {
+        console.log("Failed to delete product", error);
+      }
+    );
   }
 
 

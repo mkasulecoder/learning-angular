@@ -19,6 +19,10 @@ export class FetchdataService {
     return this.http.get(`${this.baseURL}/all`);
   }
 
+  getProductById(id: number) {
+    return this.http.get(`${this.baseURL}/${id}`);
+  }
+
   /**
    * Adds new product to the list of products
    * @param newProduct 
@@ -35,7 +39,7 @@ export class FetchdataService {
    * @return response
    */
   updateCurrentProduct(currentProduct: any, currentProductId: number) {
-    return this.http.put(`${this.baseURL}/update-product/currentProductId`, currentProduct);
+    return this.http.put(`${this.baseURL}/update-product/${currentProductId}`, currentProduct);
   }
 
   /**
@@ -44,7 +48,7 @@ export class FetchdataService {
    * @returns response status
    */
   deleteProductByID(productId: number) {
-    return this.http.delete(`${this.baseURL}/delete-product/productId`);
+    return this.http.delete(`${this.baseURL}/delete-product/${productId}`);
   }
 
 
