@@ -1,0 +1,25 @@
+<div>
+  <h2>New Note</h2>
+  <form [formGroup]="addProductForm">
+    <div>
+      <label for="note-title">
+        Title:
+        <input id="note-title" formControlName="title" />
+      </label>
+    </div>
+    <div>
+      <label for="note-text">
+        Text:
+        <input id="note-text" formControlName="text" />
+      </label>
+    </div>
+    <button
+      type="button"
+      class="button"
+      type="submit"
+      [disabled]="!addProductForm.valid"
+    >
+      Add Note
+    </button>
+  </form>
+</div>
